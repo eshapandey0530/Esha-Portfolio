@@ -25,6 +25,7 @@ export default function AboutSection() {
               src="/esha.jpg"
               alt="Esha"
               fill
+              sizes="(max-width: 768px) 256px, 320px"
               className="object-cover"
               style={{ objectPosition: "50% 70%" }}
             />
