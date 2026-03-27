@@ -96,38 +96,32 @@ const skillGroups = [
   {
     label: "Product & Delivery",
     skills: ["Product Strategy", "Roadmapping", "PRDs & BRDs", "User Research", "Agile/Scrum", "OKRs & KPIs", "A/B Testing", "Prioritization (RICE/ICE)"],
-    color: "from-purple-500/20 to-purple-500/5 border-purple-500/20",
-    dot: "bg-purple-400",
+    dot: "bg-white/40",
   },
   {
     label: "AI, ML & Data",
     skills: ["LLMs", "RAG", "Prompt Engineering", "Generative AI", "NLP", "Machine Learning", "Product Analytics", "Data Visualization", "LangChain", "LangGraph"],
-    color: "from-blue-500/20 to-blue-500/5 border-blue-500/20",
-    dot: "bg-blue-400",
+    dot: "bg-white/40",
   },
   {
     label: "Programming",
     skills: ["Python", "Java", "C/C++", "SQL", "JavaScript", "TypeScript", "HTML/CSS", "Tailwind"],
-    color: "from-emerald-500/20 to-emerald-500/5 border-emerald-500/20",
-    dot: "bg-emerald-400",
+    dot: "bg-white/40",
   },
   {
     label: "Frameworks & Cloud",
     skills: ["React", "FastAPI", "Flask", "Node.js", "AngularJS", "AWS", "GCP", "SAP UI5 Fiori"],
-    color: "from-orange-500/20 to-orange-500/5 border-orange-500/20",
-    dot: "bg-orange-400",
+    dot: "bg-white/40",
   },
   {
     label: "Tools",
     skills: ["Git", "Docker", "Postman", "Jira", "Figma", "Power BI", "Tableau", "VS Code", "Cursor"],
-    color: "from-pink-500/20 to-pink-500/5 border-pink-500/20",
-    dot: "bg-pink-400",
+    dot: "bg-white/40",
   },
   {
     label: "Libraries",
     skills: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Keras", "OpenCV", "NLTK"],
-    color: "from-cyan-500/20 to-cyan-500/5 border-cyan-500/20",
-    dot: "bg-cyan-400",
+    dot: "bg-white/40",
   },
 ]
 
@@ -164,17 +158,17 @@ export default function SkillsSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className={`bg-gradient-to-br ${group.color} border rounded-2xl p-5 backdrop-blur-sm`}
+            className="bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-2xl p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.06]"
           >
             <div className="flex items-center gap-2 mb-3">
-              <span className={`w-2 h-2 rounded-full ${group.dot}`} />
-              <h3 className="text-white font-semibold text-sm">{group.label}</h3>
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400/60" />
+              <h3 className="text-white/90 font-semibold text-sm">{group.label}</h3>
             </div>
             <div className="flex flex-wrap gap-1.5">
               {group.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="text-xs text-gray-300 bg-white/5 border border-white/10 rounded-full px-2.5 py-1"
+                  className="text-xs text-gray-400 bg-white/[0.04] border border-white/[0.08] rounded-full px-2.5 py-1"
                 >
                   {skill}
                 </span>

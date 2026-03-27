@@ -67,6 +67,44 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
+
+          {/* Education */}
+          <div className="pt-4">
+            <p className="text-sm uppercase tracking-[0.3em] text-purple-400 font-medium mb-4">Education</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                {
+                  logo: "/nyu.png",
+                  name: "New York University",
+                  degree: "MS in Information Systems",
+                  minor: "Minor: Computer Science",
+                  period: "09/2024 – 05/2026",
+                },
+                {
+                  logo: "/juit.jpg",
+                  name: "Jaypee University",
+                  degree: "B.Tech — CSE",
+                  minor: "Minor: Data Science",
+                  period: "07/2018 – 05/2022",
+                },
+              ].map((edu) => (
+                <div
+                  key={edu.name}
+                  className="flex items-center gap-3 bg-white/[0.04] border border-white/10 rounded-2xl p-4"
+                >
+                  <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 bg-white">
+                    <img src={edu.logo} alt={edu.name} className="w-full h-full object-contain" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-white font-semibold text-sm leading-snug truncate">{edu.name}</p>
+                    <p className="text-gray-400 text-xs leading-snug">{edu.degree}</p>
+                    <p className="text-gray-500 text-xs">{edu.minor}</p>
+                    <p className="text-gray-600 text-xs mt-0.5">{edu.period}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

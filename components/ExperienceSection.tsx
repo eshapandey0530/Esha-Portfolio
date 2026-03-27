@@ -2,47 +2,16 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Briefcase, GraduationCap, Bot } from "lucide-react"
-import { ImageAccordion, type AccordionItem } from "@/components/ui/interactive-image-accordion"
 import ReleaseTimeline, { type TimelineEntry } from "@/components/ui/release-time-line"
-
-const accordionItems: AccordionItem[] = [
-  {
-    id: 1,
-    title: "Graduate Teaching Assistant",
-    subtitle: "NYU Stern · Sep 2025 – Present",
-    description:
-      "Supporting graduate-level coursework at NYU Stern School of Business. Mentoring students through complex information systems concepts, facilitating discussions, and providing feedback on assignments and projects.",
-    imageUrl: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Teaching", "Information Systems", "Mentoring", "NYU Stern"],
-  },
-  {
-    id: 2,
-    title: "AI Product Manager",
-    subtitle: "Internship · Jun – Aug 2025",
-    description:
-      "Led product discovery and roadmap planning for AI-powered features. Collaborated with engineering and design to ship experiments, ran A/B tests, and translated user research into actionable product requirements.",
-    imageUrl: "https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Product Strategy", "LLMs", "A/B Testing", "Roadmapping", "Agile"],
-  },
-  {
-    id: 3,
-    title: "Software Engineer",
-    subtitle: "Infosys · Jul 2022 – Jul 2024",
-    description:
-      "Built and shipped production-grade features across the full stack at Infosys. Worked closely with product and design to deliver scalable, user-facing experiences used by thousands of users daily.",
-    imageUrl: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop",
-    tags: ["React", "Node.js", "TypeScript", "Python", "AWS", "Docker"],
-  },
-]
 
 const timelineEntries: TimelineEntry[] = [
   {
     icon: GraduationCap,
     title: "Graduate Teaching Assistant",
     subtitle: "NYU Stern · Sep 2025 – Present",
+    logo: "/stern.png",
     description:
       "Supporting graduate-level coursework at NYU Stern School of Business. Mentoring students through complex information systems concepts and providing feedback on assignments.",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop",
     items: [
       "Facilitate weekly discussion sections for graduate IS courses",
       "Mentor students on coursework, projects, and career guidance",
@@ -52,10 +21,10 @@ const timelineEntries: TimelineEntry[] = [
   {
     icon: Bot,
     title: "AI Product Manager",
-    subtitle: "Internship · Jun – Aug 2025",
+    subtitle: "Sentari · Jun – Aug 2025",
+    logo: "/sentari.jpeg",
     description:
       "Led product discovery and roadmap planning for AI-powered features. Collaborated with engineering and design to ship experiments and translate user research into product requirements.",
-    image: "https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop",
     items: [
       "Defined and prioritized AI feature roadmap using RICE framework",
       "Ran A/B tests and experiments to validate product hypotheses",
@@ -67,9 +36,9 @@ const timelineEntries: TimelineEntry[] = [
     icon: Briefcase,
     title: "Software Engineer",
     subtitle: "Infosys · Jul 2022 – Jul 2024",
+    logo: "https://static.vecteezy.com/system/resources/previews/020/336/451/non_2x/infosys-logo-infosys-icon-free-free-vector.jpg",
     description:
       "Built and shipped production-grade features across the full stack. Delivered scalable, user-facing experiences used by thousands of users daily.",
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop",
     items: [
       "Developed full-stack features using React, Node.js, and TypeScript",
       "Optimised API performance reducing response times by 40%",
@@ -100,15 +69,8 @@ export default function ExperienceSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white">Where I&apos;ve Worked</h2>
         </div>
 
-        {/* Desktop / Tablet — accordion */}
-        <div className="hidden md:block">
-          <ImageAccordion items={accordionItems} defaultActive={0} />
-        </div>
-
-        {/* Mobile — scrolling timeline */}
-        <div className="md:hidden">
-          <ReleaseTimeline entries={timelineEntries} />
-        </div>
+        {/* Timeline — all screen sizes */}
+        <ReleaseTimeline entries={timelineEntries} />
       </motion.div>
     </section>
   )
