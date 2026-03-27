@@ -62,7 +62,6 @@ const timelineEntries: TimelineEntry[] = [
     title: "Sah·AI - AI Health Companion",
     subtitle: "React · Multi-Agent · Full-Stack",
     description: "AI-powered health companion for seniors with chronic conditions. Multi-agent system for medication tracking, meal analysis, symptom monitoring & caregiver alerts.",
-    image: "https://www.sermo.com/wp-content/uploads/2025/05/seo-header-universal-healthcare-1440x811.png",
     items: [
       "Built multi-agent system for medication tracking and symptom monitoring",
       "Implemented voice-first, multilingual interface for senior accessibility",
@@ -74,7 +73,6 @@ const timelineEntries: TimelineEntry[] = [
     title: "TCM Nutrition Insight",
     subtitle: "GPT-4o Vision · FastAPI · TCM",
     description: "AI web app analyzing tongue or meal photos using GPT-4o vision, cross-referencing with blood work data for TCM nutritional insights.",
-    image: "https://magazine.einsteinmed.edu/wp-content/uploads/sites/4/2024/10/SF24-Food-Header-Full-FPO-2.jpg",
     items: [
       "Integrated GPT-4o vision API for photo-based health analysis",
       "Built blood work data cross-referencing pipeline",
@@ -86,7 +84,6 @@ const timelineEntries: TimelineEntry[] = [
     title: "AI Memo Draft Generator",
     subtitle: "AI · Investment Memos · PDF Generation",
     description: "Agentic tool generating structured investment memos from Gmail, Drive, and Affinity signals — powered by Gemini 2.5 Flash.",
-    image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=2071&auto=format&fit=crop",
     items: [
       "Integrated Gmail, Drive, and Affinity as data sources",
       "Used Gemini 2.5 Flash for structured memo generation",
@@ -98,7 +95,6 @@ const timelineEntries: TimelineEntry[] = [
     title: "UberEats Data Analysis",
     subtitle: "Data Science · EDA · Python",
     description: "Exploratory data analysis on UberEats dataset uncovering trends in restaurant ratings, delivery times, and customer preferences.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYlDm8X-q1-q358-Oe0h5YRP3pUgopTaXbTA&s",
     items: [
       "Cleaned and processed large-scale UberEats dataset",
       "Identified key drivers of restaurant ratings and delivery performance",
@@ -110,7 +106,6 @@ const timelineEntries: TimelineEntry[] = [
     title: "Instacart Next-Basket Recommender",
     subtitle: "ML · Data Science · Recommendation",
     description: "Predicting customer reorder behavior using Decision Tree and KNN models on Instacart grocery data.",
-    image: "https://assets.farmjournal.com/dims4/default/f7376cf/2147483647/strip/false/crop/1200x857+0+0/resize/1200x857!/quality/90/?url=https%3A%2F%2Ffj-corp-pub.s3.us-east-2.amazonaws.com%2Fs3fs-public%2F2024-02%2Finstacart.jpg",
     items: [
       "Trained Decision Tree and KNN models on Instacart order history",
       "Engineered features from purchase frequency and recency signals",
@@ -122,7 +117,6 @@ const timelineEntries: TimelineEntry[] = [
     title: "Semantic Book Recommender",
     subtitle: "NLP · Vector Search · LLM",
     description: "Gradio-powered book recommendation system using OpenAI embeddings and ChromaDB with filtering by category and emotional tone.",
-    image: "https://miro.medium.com/1*0RNUhPqH-U7neTxZ0XsEmg.jpeg",
     items: [
       "Built semantic search with OpenAI embeddings and ChromaDB",
       "Added category and emotional tone filters for personalisation",
