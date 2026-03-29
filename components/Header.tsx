@@ -66,6 +66,11 @@ export default function Header() {
           scrolled ? "bg-black/80 backdrop-blur-md border-b border-white/10" : "bg-black/40 backdrop-blur-sm"
         }`}
       >
+        {/* Logo */}
+        <a href="#home" className="text-white font-bold text-lg tracking-widest hidden md:block">
+          ESHA<span className="text-purple-400">.</span>
+        </a>
+
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
@@ -89,8 +94,10 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile: active label */}
-        <span className="md:hidden text-white text-sm font-medium">{active}</span>
+        {/* Mobile: brand name */}
+        <a href="#home" className="md:hidden text-white font-bold text-base tracking-widest">
+          ESHA<span className="text-purple-400">.</span>
+        </a>
 
         <div className="flex items-center gap-3">
           <a
