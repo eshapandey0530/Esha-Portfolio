@@ -11,10 +11,9 @@ const navItems = [
   { label: "Product", href: "#product" },
   { label: "Blogs", href: "#blogs" },
   { label: "Case Studies", href: "#case-studies" },
-  { label: "Ask Me Anything", href: "#ask" },
 ]
 
-const sectionIds = ["home", "about", "skills", "experience", "product", "blogs", "case-studies", "ask"]
+const sectionIds = ["home", "about", "skills", "experience", "product", "blogs", "case-studies", "connect"]
 
 export default function Header() {
   const [active, setActive] = useState("Home")
@@ -47,7 +46,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", getActiveSection)
   }, [])
 
-  // lock body scroll when panel is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : ""
     return () => { document.body.style.overflow = "" }
@@ -91,7 +89,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile: logo / active label */}
+        {/* Mobile: active label */}
         <span className="md:hidden text-white text-sm font-medium">{active}</span>
 
         <div className="flex items-center gap-3">
@@ -101,8 +99,6 @@ export default function Header() {
           >
             Connect with Me
           </a>
-
-          {/* Hamburger — mobile only */}
           <button
             onClick={() => setMenuOpen(true)}
             className="md:hidden p-2 text-white"
@@ -117,7 +113,6 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -127,8 +122,6 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className="fixed inset-0 z-[60] bg-black/60 md:hidden"
             />
-
-            {/* Panel */}
             <motion.div
               key="panel"
               initial={{ x: "100%" }}
@@ -137,15 +130,12 @@ export default function Header() {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="fixed top-0 right-0 h-full w-72 z-[70] bg-[#0d1117] border-l border-white/10 flex flex-col md:hidden"
             >
-              {/* Panel header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
                 <span className="text-white font-semibold text-base">Menu</span>
                 <button onClick={() => setMenuOpen(false)} className="text-gray-400 hover:text-white" aria-label="Close menu">
                   <X size={20} />
                 </button>
               </div>
-
-              {/* Nav links */}
               <nav className="flex flex-col gap-1 px-4 py-6 flex-1">
                 {navItems.map((item, i) => (
                   <motion.a
@@ -168,8 +158,6 @@ export default function Header() {
                   </motion.a>
                 ))}
               </nav>
-
-              {/* CTA at bottom */}
               <div className="px-6 py-6 border-t border-white/10">
                 <a
                   href="#connect"

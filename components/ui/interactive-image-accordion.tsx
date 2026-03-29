@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react'
+import { Github, ExternalLink } from 'lucide-react'
 
 export interface AccordionItem {
   id: number
@@ -8,6 +9,8 @@ export interface AccordionItem {
   description: string
   imageUrl: string
   tags?: string[]
+  github?: string
+  liveUrl?: string
 }
 
 interface AccordionItemProps {
@@ -30,6 +33,32 @@ const AccordionPanel = ({ item, isActive, onMouseEnter }: AccordionItemProps) =>
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className={`absolute inset-0 transition-all duration-700 ${isActive ? 'bg-black/50' : 'bg-black/70'}`} />
+
+      {/* Top-right icons — only when expanded */}
+      <div className={`absolute top-4 right-4 flex gap-2 transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        {item.github && (
+          <a
+            href={item.github}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="w-9 h-9 rounded-full bg-black/60 border border-white/10 flex items-center justify-center hover:bg-black/80 transition-colors"
+          >
+            <Github className="w-4 h-4 text-white" />
+          </a>
+        )}
+        {item.liveUrl && (
+          <a
+            href={item.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="w-9 h-9 rounded-full bg-black/60 border border-white/10 flex items-center justify-center hover:bg-black/80 transition-colors"
+          >
+            <ExternalLink className="w-4 h-4 text-white" />
+          </a>
+        )}
+      </div>
 
       {/* Vertical title when collapsed */}
       <span

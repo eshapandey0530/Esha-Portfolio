@@ -13,6 +13,8 @@ const accordionItems: AccordionItem[] = [
     description: "AI-powered health companion for seniors with chronic conditions. Multi-agent system for medication tracking, meal analysis, symptom monitoring & caregiver alerts. Aims to achieve 85% adherence & reduces hospitalizations. Voice-first, multilingual.",
     imageUrl: "https://www.sermo.com/wp-content/uploads/2025/05/seo-header-universal-healthcare-1440x811.png",
     tags: ["GPT-4", "PostgreSQL", "TypeScript", "Node.js", "FastAPI"],
+    github: "https://github.com/eshapandey0530/SahAI",
+    liveUrl: "https://sahai-5vxl.onrender.com/",
   },
   {
     id: 2,
@@ -21,6 +23,8 @@ const accordionItems: AccordionItem[] = [
     description: "AI-powered web app that analyzes tongue or meal photos using GPT-4o vision, cross-references findings with blood work data, and returns Traditional Chinese Medicine nutritional insights with per-ingredient portion tracking.",
     imageUrl: "https://magazine.einsteinmed.edu/wp-content/uploads/sites/4/2024/10/SF24-Food-Header-Full-FPO-2.jpg",
     tags: ["Python", "FastAPI", "OpenAI", "GPT-4o", "HealthTech"],
+    github: "https://github.com/eshapandey0530/TCM-Nutrition-Insight",
+    liveUrl: "https://tcm-nutrition-insight.onrender.com/",
   },
   {
     id: 3,
@@ -29,6 +33,7 @@ const accordionItems: AccordionItem[] = [
     description: "Agentic tool that generates structured investment memos from company data using Gmail, Drive, and Affinity signals — powered by Gemini 2.5 Flash.",
     imageUrl: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=2071&auto=format&fit=crop",
     tags: ["Python", "FastAPI", "Streamlit", "Gemini", "LLM"],
+    github: "https://github.com/eshapandey0530/AI-Agentic-Investment-Memo-Generator",
   },
   {
     id: 4,
@@ -37,6 +42,7 @@ const accordionItems: AccordionItem[] = [
     description: "Exploratory data analysis on UberEats dataset to uncover trends in restaurant ratings, delivery times, and customer preferences.",
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYlDm8X-q1-q358-Oe0h5YRP3pUgopTaXbTA&s",
     tags: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter"],
+    github: "https://github.com/eshapandey0530/Exploratory-Data-Analysis-of-Uber-Eats-Data",
   },
   {
     id: 5,
@@ -45,6 +51,7 @@ const accordionItems: AccordionItem[] = [
     description: "Predicting customer reorder behavior using Decision Tree and KNN models on Instacart grocery data to uncover purchasing patterns and improve product recommendations.",
     imageUrl: "https://assets.farmjournal.com/dims4/default/f7376cf/2147483647/strip/false/crop/1200x857+0+0/resize/1200x857!/quality/90/?url=https%3A%2F%2Ffj-corp-pub.s3.us-east-2.amazonaws.com%2Fs3fs-public%2F2024-02%2Finstacart.jpg",
     tags: ["Python", "Scikit-learn", "Decision Tree", "KNN", "Pandas"],
+    github: "https://github.com/eshapandey0530/INSTACART-NEXT-BASKET-RECOMMENDER-SYSTEM",
   },
   {
     id: 6,
@@ -53,6 +60,7 @@ const accordionItems: AccordionItem[] = [
     description: "A Gradio-powered book recommendation system that uses OpenAI embeddings and ChromaDB to find semantically similar books, with filtering by category and emotional tone.",
     imageUrl: "https://miro.medium.com/1*0RNUhPqH-U7neTxZ0XsEmg.jpeg",
     tags: ["Python", "LangChain", "OpenAI", "ChromaDB", "Gradio"],
+    github: "https://github.com/eshapandey0530/book-recommender",
   },
 ]
 

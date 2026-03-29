@@ -74,7 +74,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 {
-                  logo: "/nyu.png",
+                  logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75Z6shU-j5FhcHcpdrWXXhND_uH1oCRmhfw&s",
                   name: "New York University",
                   degree: "MS in Information Systems",
                   minor: "Minor: Computer Science",
@@ -92,8 +92,8 @@ export default function AboutSection() {
                   key={edu.name}
                   className="flex items-center gap-3 bg-white/[0.04] border border-white/10 rounded-2xl p-4"
                 >
-                  <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 bg-white">
-                    <img src={edu.logo} alt={edu.name} className="w-full h-full object-contain" />
+                  <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0" style={{ background: "#57068c" }}>
+                    <img src={edu.logo} alt={edu.name} className="w-full h-full object-cover scale-[1.3]" />
                   </div>
                   <div className="min-w-0">
                     <p className="text-white font-semibold text-sm leading-snug truncate">{edu.name}</p>

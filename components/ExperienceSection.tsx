@@ -9,7 +9,7 @@ const timelineEntries: TimelineEntry[] = [
     icon: GraduationCap,
     title: "Graduate Teaching Assistant",
     subtitle: "NYU Stern · Sep 2025 – Present",
-    logo: "/stern.png",
+    logo: "https://www.stagecoachimprov.com/wordpress/wp-content/uploads/2018/02/nyu_300x300.png",
     description:
       "Supporting graduate-level coursework at NYU Stern School of Business. Mentoring students through complex information systems concepts and providing feedback on assignments.",
     items: [
@@ -21,15 +21,19 @@ const timelineEntries: TimelineEntry[] = [
   {
     icon: Bot,
     title: "AI Product Manager",
-    subtitle: "Sentari · Jun – Aug 2025",
+    subtitle: "Sentari · Jun 2025 – Aug 2025",
     logo: "/sentari.jpeg",
     description:
-      "Led product discovery and roadmap planning for AI-powered features. Collaborated with engineering and design to ship experiments and translate user research into product requirements.",
+      "Led product strategy and launch for an AI voice journaling app that analyzes emotional signals and generates reflective prompts to support mental well-being.",
     items: [
-      "Defined and prioritized AI feature roadmap using RICE framework",
-      "Ran A/B tests and experiments to validate product hypotheses",
-      "Wrote PRDs and BRDs for LLM-powered product features",
-      "Collaborated cross-functionally with engineering, design, and data teams",
+      "Led launch of an AI voice journaling product (web app) that analyzes emotional signals from voice entries and generates reflective prompts to support mental well-being",
+      "Conducted user research & competitive analysis across platforms to identify feature gaps & inform product strategy",
+      "Proposed & led development of an Emotion Calendar to visualize trends & improve user experience & engagement",
+      "Authored PRDs and defined product requirements, feature specifications, and acceptance criteria for AI journaling capabilities including emotion tracking and adaptive prompts",
+      "Defined emotion-aware prompt logic to ensure supportive, non-triggering AI responses across emotional states",
+      "Collaborated cross-functionally with engineering and design on SDLC sprint planning and feature prioritization",
+      "Scaled early product validation to ~500 users through community-driven recruitment, gathering usability feedback and insights for data-driven product improvements",
+      "Tracked product performance metrics (trial-to-subscription conversion & user retention) to guide feature iteration",
     ],
   },
   {
@@ -38,13 +42,16 @@ const timelineEntries: TimelineEntry[] = [
     subtitle: "Infosys · Jul 2022 – Jul 2024",
     logo: "https://static.vecteezy.com/system/resources/previews/020/336/451/non_2x/infosys-logo-infosys-icon-free-free-vector.jpg",
     description:
-      "Built and shipped production-grade features across the full stack. Delivered scalable, user-facing experiences used by thousands of users daily.",
+      "Built and owned enterprise-grade systems at Infosys, delivering scalable full-stack solutions used by 1,000+ users across finance and document management workflows.",
     items: [
-      "Developed full-stack features using React, Node.js, and TypeScript",
-      "Optimised API performance reducing response times by 40%",
-      "Integrated third-party services and internal microservices",
-      "Participated in code reviews and maintained high test coverage",
-      "Worked in Agile sprints with weekly releases to production",
+      "Owned system architecture for SAP-based enterprise application used by 1,000+ users",
+      "Scoped end-to-end document ingestion pipeline (UI5 → REST APIs → validation → backend microservices), handling file uploads, schema validation, and failure recovery ensuring full SDLC scalability, modularity, and maintainability",
+      "Facilitated code migration utilizing flag-backed changes towards 0 downtime & 70% performance improvements",
+      "Integrated across the CI/CD lifecycle, supporting rapid iteration, testing, and deployment of production AI services",
+      "Optimized RESTful APIs for document ingestion and validation, reducing processing latency by 30%",
+      "Developed role-based access control (RBAC) and workflow validation logic for a finance approval system, improving authorization correctness, auditability, and data integrity",
+      "Utilized version control promoting collaborative development, release management, and production debugging",
+      "Led frontend–backend integration and production debugging, resolving API mismatches, reducing bugs by 40%",
     ],
   },
 ]

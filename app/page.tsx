@@ -1,13 +1,16 @@
 "use client"
 import { useState, useCallback } from "react"
 import Preloader from "@/components/ui/preloader"
-import HeroSection from "@/components/HeroSection"
 import Header from "@/components/Header"
+import HeroSection from "@/components/HeroSection"
 import AboutSection from "@/components/AboutSection"
 import SkillsSection from "@/components/SkillsSection"
 import CareerTimeline from "@/components/CareerTimeline"
 import ExperienceSection from "@/components/ExperienceSection"
 import ProductSection from "@/components/ProductSection"
+import BlogsSection from "@/components/BlogsSection"
+import CaseStudiesSection from "@/components/CaseStudiesSection"
+import ConnectSection from "@/components/ConnectSection"
 
 export default function Home() {
   const [showPreloader, setShowPreloader] = useState(true)
@@ -29,6 +32,9 @@ export default function Home() {
         <CareerTimeline />
         <ExperienceSection />
         <ProductSection />
+        <BlogsSection />
+        <CaseStudiesSection />
+        <ConnectSection />
       </main>
     </>
   )
