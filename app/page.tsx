@@ -11,6 +11,7 @@ import ProductSection from "@/components/ProductSection"
 import BlogsSection from "@/components/BlogsSection"
 import CaseStudiesSection from "@/components/CaseStudiesSection"
 import ConnectSection from "@/components/ConnectSection"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   const [showPreloader, setShowPreloader] = useState(true)
@@ -35,6 +36,7 @@ export default function Home() {
         <BlogsSection />
         <CaseStudiesSection />
         <ConnectSection />
+        <Footer />
       </main>
     </>
   )
