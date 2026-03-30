@@ -105,7 +105,7 @@ export default function ConnectSection() {
                 type="submit"
                 className="w-full py-3 rounded-xl bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors"
               >
-                Send Email
+                Send Message
               </button>
             </form>
           )}
