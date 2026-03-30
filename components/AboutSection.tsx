@@ -60,7 +60,7 @@ export default function AboutSection() {
           </p>
 
           <div className="flex gap-8 pt-2">
-            {[["2+", "Years Experience"], ["20+", "Projects Built"], ["10+", "Happy Clients"]].map(([num, label]) => (
+            {[["2+", "Years Experience"], ["20+", "Projects Built"]].map(([num, label]) => (
               <div key={label}>
                 <p className="text-2xl font-bold text-white">{num}</p>
                 <p className="text-sm text-gray-500">{label}</p>
