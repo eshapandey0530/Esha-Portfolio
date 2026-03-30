@@ -5,22 +5,18 @@ import { ArrowUpRight } from "lucide-react"
 
 const cases = [
   {
-    title: "Sah·AI: Designing for Seniors with Chronic Conditions",
+    title: "Headspace Has a Habit Problem, Not a Content Problem",
     tag: "Product Design · AI",
     outcome: "85% medication adherence target, voice-first UX for low-tech users",
-    description: "A deep dive into the research, design decisions, and technical trade-offs behind building an AI health companion for elderly users with limited tech literacy.",
+    description: "A breakdown of Headspace — analyzing its core habit loop, retention challenges, and how AI-driven personalization could transform the mental wellness experience.",
+    href: "https://open.substack.com/pub/esha609848/p/headspace-has-a-habit-problem-not?r=46g8y6&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
   },
   {
-    title: "Emotion Calendar: From Insight to Feature",
+    title: "Notion Has an Intelligence Problem",
     tag: "Feature Design · PM",
     outcome: "Increased user engagement and session depth at Sentari",
-    description: "How I identified a gap in emotional trend visibility, proposed the Emotion Calendar feature, and led its development from PRD to production.",
-  },
-  {
-    title: "Reducing API Latency by 30% at Infosys",
-    tag: "Engineering · Performance",
-    outcome: "30% latency reduction, 70% performance improvement post-migration",
-    description: "A technical case study on optimizing RESTful APIs for a document ingestion pipeline — covering profiling, bottleneck identification, and flag-backed migration.",
+    description: "A breakdown of Notion — examining how its AI features fall short of user expectations and what a smarter, context-aware intelligence layer could look like.",
+    href: "https://open.substack.com/pub/esha609848/p/notion-has-an-intelligence-problem?r=46g8y6&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
   },
 ]
 
@@ -44,12 +40,15 @@ export default function CaseStudiesSection() {
         </div>
         <div className="flex flex-col gap-5">
           {cases.map((c, i) => (
-            <motion.div
+            <motion.a
               key={c.title}
+              href={c.href ?? undefined}
+              target={c.href ? "_blank" : undefined}
+              rel={c.href ? "noreferrer" : undefined}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-8 bg-white/[0.03] border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.05] cursor-pointer"
+              className={`group flex flex-col md:flex-row md:items-center gap-4 md:gap-8 bg-white/[0.03] border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.05] ${c.href ? "cursor-pointer" : "cursor-default"}`}
             >
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
@@ -63,8 +62,21 @@ export default function CaseStudiesSection() {
                 <p className="text-gray-300 text-sm leading-relaxed">{c.outcome}</p>
                 <ArrowUpRight className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors mt-1" />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
+        </div>
+
+        {/* Substack CTA */}
+        <div className="flex justify-end mt-6">
+          <a
+            href="https://substack.com/@esha609848/posts"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors duration-200 group"
+          >
+            Find out more here
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
         </div>
       </motion.div>
     </section>
