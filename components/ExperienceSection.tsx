@@ -11,10 +11,11 @@ const timelineEntries: TimelineEntry[] = [
     subtitle: "NYU Stern · Sep 2025 – Present",
     logo: "https://www.stagecoachimprov.com/wordpress/wp-content/uploads/2018/02/nyu_300x300.png",
     description:
-      "Supporting graduate-level coursework at NYU Stern School of Business. Mentoring students through complex information systems concepts and providing feedback on assignments.",
+      "Supporting graduate and undergraduate coursework at NYU Stern School of Business. Mentoring students through complex information systems concepts and data analysis, and providing feedback on assignments using tools like Excel, R, and Python.",
     items: [
-      "Facilitate weekly discussion sections for graduate IS courses",
-      "Mentor students on coursework, projects, and career guidance",
+      "Facilitate weekly discussion sections for IS courses",
+      "Mentor graduate and undergraduate students on coursework, projects, and career guidance",
+      "Use Excel, R, and Python to support assignments and guide analytical problem-solving",
       "Collaborate with faculty to develop course materials",
     ],
   },
