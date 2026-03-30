@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Product", href: "#product" },
   { label: "Blogs", href: "#blogs" },
   { label: "Case Studies", href: "#case-studies" },
+  { label: "Resume", href: "/resume.pdf", external: true },
 ]
 
 const socials = [
@@ -35,6 +36,8 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
+                target={'external' in link ? "_blank" : undefined}
+                rel={'external' in link ? "noreferrer" : undefined}
                 className="text-sm text-gray-500 hover:text-white transition-colors duration-200"
               >
                 {link.label}
