@@ -1,41 +1,22 @@
 "use client"
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Mail, Linkedin, Calendar, Loader2 } from "lucide-react"
-
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY" // get free key at web3forms.com → enter ep3369@stern.nyu.edu
+import { Mail, Linkedin, Calendar } from "lucide-react"
 
 export default function ConnectSection() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-80px" })
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" })
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
+  const [form, setForm] = useState({ subject: "", message: "" })
+  const [sent, setSent] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setStatus("sending")
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          name: form.name,
-          email: form.email,
-          subject: form.subject || "Message from Portfolio",
-          message: form.message,
-        }),
-      })
-      const data = await res.json()
-      if (data.success) {
-        setStatus("sent")
-        setForm({ name: "", email: "", subject: "", message: "" })
-      } else {
-        setStatus("error")
-      }
-    } catch {
-      setStatus("error")
-    }
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=ep3369@stern.nyu.edu&su=${encodeURIComponent(
+      form.subject || "Message from Portfolio"
+    )}&body=${encodeURIComponent(form.message)}`
+    window.open(gmailUrl, "_blank")
+    setSent(true)
+    setForm({ subject: "", message: "" })
   }
 
   return (
@@ -83,20 +64,18 @@ export default function ConnectSection() {
 
         {/* Right — form */}
         <div>
-          {status === "sent" ? (
+          {sent ? (
             <div className="flex flex-col items-center justify-center py-20 gap-4 text-center">
               <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
                 <Mail className="h-5 w-5 text-purple-400" />
               </div>
-              <p className="text-white text-lg font-semibold">Message sent!</p>
-              <p className="text-gray-500 text-sm">I&apos;ll get back to you soon.</p>
-              <button onClick={() => setStatus("idle")} className="text-xs text-gray-600 hover:text-gray-400 underline mt-2">Send another</button>
+              <p className="text-white text-lg font-semibold">Opening Gmail...</p>
+              <p className="text-gray-500 text-sm">Your message is pre-filled and ready to send.</p>
+              <button onClick={() => setSent(false)} className="text-xs text-gray-600 hover:text-gray-400 underline mt-2">Send another</button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-5">
               {[
-                { label: "Name", key: "name", type: "text", placeholder: "John Doe" },
-                { label: "Email", key: "email", type: "email", placeholder: "john@example.com" },
                 { label: "Subject", key: "subject", type: "text", placeholder: "Job Opportunity / Collaboration / Question" },
               ].map(({ label, key, type, placeholder }) => (
                 <div key={key} className="flex flex-col gap-1.5">
@@ -122,15 +101,11 @@ export default function ConnectSection() {
                   className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 transition-colors resize-none"
                 />
               </div>
-              {status === "error" && (
-                <p className="text-red-400 text-xs">Something went wrong. Please email me directly at ep3369@stern.nyu.edu</p>
-              )}
               <button
                 type="submit"
-                disabled={status === "sending"}
-                className="w-full py-3 rounded-xl bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full py-3 rounded-xl bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors"
               >
-                {status === "sending" ? <><Loader2 className="h-4 w-4 animate-spin" />Sending...</> : "Send Message"}
+                Send Message
               </button>
             </form>
           )}
