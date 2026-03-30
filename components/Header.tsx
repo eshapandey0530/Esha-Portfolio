@@ -13,7 +13,7 @@ const navItems = [
   { label: "Case Studies", href: "#case-studies" },
 ]
 
-const sectionIds = ["home", "about", "skills", "experience", "product", "blogs", "case-studies", "connect"]
+const sectionIds = ["home", "about", "skills", "experience", "product", "blogs", "case-studies"]
 
 export default function Header() {
   const [active, setActive] = useState("Home")
@@ -28,6 +28,16 @@ export default function Header() {
 
   useEffect(() => {
     const getActiveSection = () => {
+      // If connect section is visible, clear all highlights
+      const connectEl = document.getElementById("connect")
+      if (connectEl) {
+        const rect = connectEl.getBoundingClientRect()
+        if (rect.top < window.innerHeight / 2) {
+          setActive("")
+          return
+        }
+      }
+
       const viewportMid = window.scrollY + window.innerHeight / 2
       let closest = sectionIds[0]
       let closestDist = Infinity
@@ -101,6 +111,14 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:block px-5 py-2 text-sm font-medium text-gray-300 border border-white/15 rounded-full hover:text-white hover:border-white/30 transition-colors duration-200 whitespace-nowrap"
+          >
+            Resume
+          </a>
+          <a
             href="#connect"
             className="hidden md:block px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-gray-200 transition-colors duration-200 whitespace-nowrap"
           >
@@ -165,7 +183,15 @@ export default function Header() {
                   </motion.a>
                 ))}
               </nav>
-              <div className="px-6 py-6 border-t border-white/10">
+              <div className="px-6 py-6 border-t border-white/10 flex flex-col gap-3">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block w-full text-center px-5 py-3 text-sm font-medium text-gray-300 border border-white/15 rounded-full hover:text-white hover:border-white/30 transition-colors duration-200"
+                >
+                  Resume
+                </a>
                 <a
                   href="#connect"
                   onClick={() => setMenuOpen(false)}

@@ -14,7 +14,7 @@ const navLinks = [
 const socials = [
   { icon: Github, href: "https://github.com/eshapandey0530", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/eshapandey/", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:ep3369@stern.nyu.edu", label: "Email" },
+  { icon: Mail, href: "https://mail.google.com/mail/?view=cm&to=ep3369@stern.nyu.edu", label: "Email" },
 ]
 
 export default function Footer() {

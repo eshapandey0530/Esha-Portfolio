@@ -5,22 +5,25 @@ import { ArrowUpRight } from "lucide-react"
 
 const blogs = [
   {
-    title: "Building Multi-Agent Systems for Healthcare",
+    title: "SahAI - Building a Health Companion That Actually Listens",
     date: "Mar 2025",
     tag: "AI / Product",
-    description: "How I designed a multi-agent architecture for Sah·AI — coordinating medication tracking, meal analysis, and caregiver alerts in a single coherent system.",
+    description: "A breakdown of Sah·AI — how I designed a multi-agent architecture for seniors with chronic conditions, coordinating medication tracking, meal analysis, and caregiver alerts.",
+    href: "https://open.substack.com/pub/esha609848/p/building-a-health-companion-that?r=46g8y6&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
   },
   {
-    title: "From Engineer to Product Manager: What I Learned",
+    title: "I Built an AI That Writes VC Investment Memos",
     date: "Feb 2025",
-    tag: "Career",
-    description: "Switching from writing code to owning a product roadmap taught me more about empathy, prioritization, and communication than any engineering role ever did.",
+    tag: "AI / Product",
+    description: "A breakdown of my AI-Agentic Memo Generator — how I used Gemini, RAG, and Gmail/Drive signals to automate structured investment memo drafting, cutting drafting time by 80%.",
+    href: "https://open.substack.com/pub/esha609848/p/i-built-an-ai-that-writes-vc-investment?r=46g8y6&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
   },
   {
-    title: "Prompt Engineering for Emotion-Aware AI",
+    title: "Building a Next-Basket Recommender with Instacart Data",
     date: "Jan 2025",
-    tag: "AI / LLMs",
-    description: "Designing prompts that are supportive, non-triggering, and contextually aware across a wide range of emotional states — lessons from building Sentari.",
+    tag: "ML / Data Science",
+    description: "A breakdown of my Instacart Next-Basket Recommender — using TIFU-KNN and Decision Tree models to predict reorder behavior and personalize grocery suggestions.",
+    href: "https://open.substack.com/pub/esha609848/p/building-a-next-basket-recommender?r=46g8y6&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
   },
 ]
 
@@ -44,12 +47,15 @@ export default function BlogsSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {blogs.map((blog, i) => (
-            <motion.div
+            <motion.a
               key={blog.title}
+              href={blog.href ?? undefined}
+              target={blog.href ? "_blank" : undefined}
+              rel={blog.href ? "noreferrer" : undefined}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col gap-4 bg-white/[0.03] border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.05] cursor-pointer"
+              className={`group flex flex-col gap-4 bg-white/[0.03] border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.05] ${blog.href ? "cursor-pointer" : "cursor-default"}`}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs text-purple-400 bg-purple-400/10 border border-purple-400/20 rounded-full px-3 py-1">{blog.tag}</span>
@@ -60,8 +66,21 @@ export default function BlogsSection() {
                 <p className="text-gray-500 text-sm leading-relaxed">{blog.description}</p>
               </div>
               <p className="text-gray-600 text-xs mt-auto">{blog.date}</p>
-            </motion.div>
+            </motion.a>
           ))}
+        </div>
+
+        {/* Substack CTA */}
+        <div className="flex justify-end mt-6">
+          <a
+            href="https://substack.com/@esha609848/posts"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors duration-200 group"
+          >
+            Find out more here
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
         </div>
       </motion.div>
     </section>

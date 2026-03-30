@@ -2,17 +2,8 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Mail, Linkedin, Calendar, Loader2 } from "lucide-react"
-import emailjs from "@emailjs/browser"
 
-// ── EmailJS config ──────────────────────────────────────────────
-// 1. Sign up at https://emailjs.com (free tier: 200 emails/month)
-// 2. Create a service (Gmail) → copy Service ID
-// 3. Create a template with variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
-// 4. Copy Template ID and Public Key
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID"
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY"
-// ────────────────────────────────────────────────────────────────
+const WEB3FORMS_KEY = "YOUR_ACCESS_KEY" // get free key at web3forms.com → enter ep3369@stern.nyu.edu
 
 export default function ConnectSection() {
   const ref = useRef(null)
@@ -24,19 +15,24 @@ export default function ConnectSection() {
     e.preventDefault()
     setStatus("sending")
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name:  form.name,
-          from_email: form.email,
-          subject:    form.subject,
-          message:    form.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      )
-      setStatus("sent")
-      setForm({ name: "", email: "", subject: "", message: "" })
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          subject: form.subject || "Message from Portfolio",
+          message: form.message,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setStatus("sent")
+        setForm({ name: "", email: "", subject: "", message: "" })
+      } else {
+        setStatus("error")
+      }
     } catch {
       setStatus("error")
     }
@@ -64,7 +60,7 @@ export default function ConnectSection() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <a href="mailto:ep3369@stern.nyu.edu" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+            <a href="https://mail.google.com/mail/?view=cm&to=ep3369@stern.nyu.edu" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
               <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors">
                 <Mail className="h-4 w-4 text-purple-400" />
               </div>
@@ -134,7 +130,7 @@ export default function ConnectSection() {
                 disabled={status === "sending"}
                 className="w-full py-3 rounded-xl bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
               >
-                {status === "sending" ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending...</> : "Send Message"}
+                {status === "sending" ? <><Loader2 className="h-4 w-4 animate-spin" />Sending...</> : "Send Message"}
               </button>
             </form>
           )}
