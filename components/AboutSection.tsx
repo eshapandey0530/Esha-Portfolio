@@ -53,10 +53,10 @@ export default function AboutSection() {
             Designing with purpose,<br />building with passion.
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Hi, I&apos;m Esha — a product designer and developer who loves turning complex problems into clean, intuitive experiences. I sit at the intersection of design and engineering, which means I care just as much about how something works as how it looks.
+            Hi, I&apos;m Esha - a product designer and developer who loves turning complex problems into clean, intuitive experiences. I sit at the intersection of design and engineering, which means I care just as much about how something works as how it looks.
           </p>
           <p className="text-gray-500 leading-relaxed">
-            When I&apos;m not pushing pixels or writing code, you&apos;ll find me exploring new tools, reading about design systems, or obsessing over typography. I believe great products are built on empathy, curiosity, and a lot of iteration.
+            When I&apos;m not building, I&apos;m exploring new ideas, learning as I go, and paying attention to the details that make products feel intuitive. I enjoy the process just as much as the outcome.
           </p>
 
           <div className="flex gap-8 pt-2">
