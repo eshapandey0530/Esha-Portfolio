@@ -7,15 +7,13 @@ const cases = [
   {
     title: "Headspace Has a Habit Problem, Not a Content Problem",
     tag: "Product Design · AI",
-    outcome: "85% medication adherence target, voice-first UX for low-tech users",
-    description: "A breakdown of Headspace — analyzing its core habit loop, retention challenges, and how AI-driven personalization could transform the mental wellness experience.",
+    description: "A breakdown of Headspace - analyzing its core habit loop, retention challenges, and how AI-driven personalization could transform the mental wellness experience.",
     href: "https://open.substack.com/pub/esha609848/p/headspace-has-a-habit-problem-not?r=46g8y6&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
   },
   {
     title: "Notion Has an Intelligence Problem",
     tag: "Feature Design · PM",
-    outcome: "Increased user engagement and session depth at Sentari",
-    description: "A breakdown of Notion — examining how its AI features fall short of user expectations and what a smarter, context-aware intelligence layer could look like.",
+    description: "A breakdown of Notion - examining how its AI features fall short of user expectations and what a smarter, context-aware intelligence layer could look like.",
     href: "https://open.substack.com/pub/esha609848/p/notion-has-an-intelligence-problem?r=46g8y6&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true",
   },
 ]
@@ -57,10 +55,8 @@ export default function CaseStudiesSection() {
                 <h3 className="text-white font-semibold text-lg leading-snug mb-1">{c.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{c.description}</p>
               </div>
-              <div className="md:w-64 flex-shrink-0 flex flex-col gap-2">
-                <p className="text-xs text-gray-600 uppercase tracking-widest">Outcome</p>
-                <p className="text-gray-300 text-sm leading-relaxed">{c.outcome}</p>
-                <ArrowUpRight className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors mt-1" />
+              <div className="flex-shrink-0">
+                <ArrowUpRight className="h-4 w-4 text-gray-600 group-hover:text-white transition-colors" />
               </div>
             </motion.a>
           ))}
